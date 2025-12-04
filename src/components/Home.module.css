@@ -1,0 +1,561 @@
+/* ========================================
+   ESTILOS BASE
+   ======================================== */
+
+.container {
+  min-height: 100vh;
+  background: white;
+  overflow: hidden;
+}
+
+/* ========================================
+   SECCIONES DE COLORES
+   ======================================== */
+
+.sectionRed {
+  position: relative;
+  background: #e84b44;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionGreen {
+  position: relative;
+  background: #4fb52e;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionPurple {
+  position: relative;
+  background: #3570da;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionOrange {
+  position: relative;
+  background: #ff8c42;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionCyan {
+  position: relative;
+  background: #4fb0c6;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+  
+  .sectionYellow {
+    position: relative;
+    background: #f1c40f;
+    color: white;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+/* ========================================
+   CONTENIDO DE SECCIONES
+   ======================================== */
+
+.sectionContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentLeft {
+  max-width: 600px;
+  z-index: 5;
+  position: relative;
+}
+
+.contentRight {
+  max-width: 600px;
+  z-index: 5;
+  position: relative;
+  margin-left: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin-bottom: 0.875rem;
+  padding-left: 0.5rem;
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-50%) translateX(-10px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    right: -20rem;
+    opacity: 0;
+  }
+
+  to {
+    right: -12rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    left: -20rem;
+    opacity: 0;
+  }
+
+  to {
+    left: -12rem;
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   CÍRCULOS DECORATIVOS
+   ======================================== */
+
+.circleRight {
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: float 4s ease-in-out infinite, slideInRight 0.8s ease-out forwards;
+  animation-delay: 0s, 0.2s;
+}
+
+.circleRight:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.circleLeft {
+  position: absolute;
+  left: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-image: url('../assets/actDeportiva.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: float 4.5s ease-in-out infinite, slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.circleLeft:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.triangleWhite {
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-image: url('../assets/Colegio.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: float 5s ease-in-out infinite, slideInRight 0.8s ease-out forwards;
+  animation-delay: 0s, 0.8s;
+}
+
+.triangleWhite:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.circleOrange {
+  position: absolute;
+  left: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: float 4.5s ease-in-out infinite, slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0s, 0.2s;
+}
+
+.circleOrange:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.circleCyan {
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: float 5.5s ease-in-out infinite, slideInRight 0.8s ease-out forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.circleCyan:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+  background: #e84b44;
+  color: white;
+  padding: 1.5rem 0;
+}
+
+.footerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: white;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  color: #e5e7eb;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.logoutButton {
+  background: white;
+  color: #e84b44;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.logoutButton:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS
+   ======================================== */
+
+@media (max-width: 1023px) {
+  .logoutButton {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .circleRight,
+  .circleLeft,
+  .circleOrange,
+  .circleCyan,
+  .triangleWhite {
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .circleRight,
+  .circleCyan,
+  .triangleWhite {
+    right: -8rem;
+  }
+
+  .circleRight:hover,
+  .circleCyan:hover,
+  .triangleWhite:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .circleLeft,
+  .circleOrange {
+    left: -8rem;
+  }
+
+  .circleLeft:hover,
+  .circleOrange:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+
+  .sectionRed,
+  .sectionPurple,
+  .sectionCyan,
+  .sectionGreen,
+  .sectionOrange {
+    overflow: visible;
+    min-height: auto;
+  }
+    
+    .sectionYellow,
+    .sectionBlue,
+    .sectionPink,
+    .sectionGray {
+      overflow: visible;
+      min-height: auto;
+    }
+
+  .sectionRed .sectionContent,
+  .sectionPurple .sectionContent,
+  .sectionCyan .sectionContent,
+  .sectionGreen .sectionContent,
+  .sectionOrange .sectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 1.5rem 4rem 1.5rem;
+    position: relative;
+  }
+    
+    .sectionYellow .sectionContent,
+    .sectionBlue .sectionContent,
+    .sectionPink .sectionContent,
+    .sectionGray .sectionContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 1.5rem 4rem 1.5rem;
+      position: relative;
+    }
+
+  .circleRight,
+  .circleCyan,
+  .triangleWhite,
+  .circleLeft,
+  .circleOrange {
+    width: 340px;
+    height: 340px;
+    background-size: cover;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    margin: -170px 0 2rem 0;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  /* Alineaciones específicas para mobile */
+  .sectionRed .circleRight {
+    align-self: center;
+  }
+
+  .sectionGreen .circleLeft {
+    align-self: flex-start;
+    margin-left: -1rem;
+  }
+
+  .sectionPurple .triangleWhite {
+    align-self: flex-end;
+    margin-right: -1rem;
+  }
+
+  .sectionOrange .circleOrange {
+    align-self: flex-start;
+    margin-left: -1rem;
+  }
+
+  .sectionCyan .circleCyan {
+    align-self: flex-end;
+    margin-right: -1rem;
+  }
+
+  .circleRight:hover,
+  .circleCyan:hover,
+  .triangleWhite:hover,
+  .circleLeft:hover,
+  .circleOrange:hover {
+    transform: scale(1.02);
+  }
+
+  .contentLeft,
+  .contentRight {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sectionRed .contentLeft,
+  .sectionPurple .contentLeft,
+  .sectionCyan .contentLeft,
+  .sectionGreen .contentRight,
+  .sectionOrange .contentRight {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .list {
+    display: inline-block;
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .listItem {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+}

@@ -1,0 +1,440 @@
+.container {
+  min-height: 100vh;
+  background: white;
+  overflow: hidden;
+}
+
+/* Header con gradiente */
+.header {
+  position: relative;
+  background: white;
+  color: #1f2937;
+  overflow: hidden;
+  padding: 3rem 2rem;
+}
+
+.headerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  text-align: left;
+}
+
+.headerTitle {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #1f2937;
+}
+
+/* Diamantes decorativos */
+.diamond1 {
+  position: absolute;
+  top: 2rem;
+  right: 15%;
+  width: 90px;
+  height: 90px;
+  background: #e84b44;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond2 {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  width: 110px;
+  height: 110px;
+  background: #f5d143;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transform: translateY(-50%);
+}
+
+.diamond3 {
+  position: absolute;
+  bottom: 2rem;
+  right: 20%;
+  width: 80px;
+  height: 80px;
+  background: #4fb52e;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.headerSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+
+
+/* Secciones de contenido */
+.sectionRed {
+  position: relative;
+  background: #e84b44;
+  color: white;
+  overflow: hidden;
+}
+
+.sectionGreen {
+  position: relative;
+  background: #4fb52e;
+  color: white;
+  overflow: hidden;
+}
+
+.sectionPurple {
+  position: relative;
+  background: #3570da;
+  color: white;
+  overflow: hidden;
+}
+
+.sectionYellow {
+  position: relative;
+  background: #f5d143;
+  color: #1f2937;
+  overflow: hidden;
+}
+
+.sectionOrange {
+  position: relative;
+  background: #eea137;
+  color: white;
+  overflow: hidden;
+}
+
+.sectionCyan {
+  position: relative;
+  background: #4fb0c6;
+  color: white;
+  overflow: hidden;
+}
+
+.sectionContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.contentLeft {
+  max-width: 42rem;
+}
+
+.contentRight {
+  max-width: 42rem;
+  margin-left: auto;
+  text-align: right;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-10px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Círculos decorativos en secciones */
+.circleRight {
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  opacity: 0;
+  animation: float 4s ease-in-out infinite, slideInRight 0.8s ease-out forwards;
+  animation-delay: 0s, 0.2s;
+}
+
+.circleRight:hover {
+  transform: translateY(-50%) scale(1.1);
+  filter: brightness(1.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.circleLeft {
+  position: absolute;
+  left: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  opacity: 0;
+  animation: float 4.5s ease-in-out infinite, slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.circleLeft:hover {
+  transform: translateY(-50%) scale(1.1);
+  filter: brightness(1.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Círculo decorativo para sección morada */
+.triangleWhite {
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  opacity: 0;
+  animation: float 5s ease-in-out infinite, slideInRight 0.8s ease-out forwards;
+  animation-delay: 0s, 0.8s;
+}
+
+.triangleWhite:hover {
+  transform: translateY(-50%) scale(1.1);
+  filter: brightness(1.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer */
+.footer {
+  background: #e84b44;
+  color: white;
+  padding: 1.5rem 0;
+}
+
+.footerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: white;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  color: #e5e7eb;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.logoutButton {
+  background: white;
+  color: #e84b44;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.logoutButton:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1023px) {
+  .logoutButton {
+    display: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .circleRight,
+  .circleLeft,
+  .triangleWhite {
+    width: 350px;
+    height: 350px;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .circleRed,
+  .circleYellow,
+  .circlePink {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .sectionPurple .sectionContent,
+  .sectionOrange .sectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sectionYellow .sectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .circleRight,
+  .triangleWhite {
+    width: 260px;
+    height: 260px;
+    border: 5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin: 0 0 0.5rem 0;
+    border-radius: 50%;
+  }
+
+  .circleRight:hover,
+  .triangleWhite:hover {
+    transform: scale(1.02);
+  }
+
+  .circleLeft {
+    width: 260px;
+    height: 260px;
+    border: 5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 0 0.5rem 0;
+    border-radius: 50%;
+  }
+
+  .circleLeft:hover {
+    transform: scale(1.02);
+  }
+
+  .contentLeft,
+  .contentRight {
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+  }
+
+  .sectionContent {
+     padding: 1.25rem 1.5rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .listItem {
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+}

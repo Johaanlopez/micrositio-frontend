@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*.local
+
+coverage/
+*.log
+install-log.txt
+# Ignora archivos de backup o dumps si los generas
+*.bak
+*.tmp
+*.dump
