@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import styles from './Home.module.css';
 import navidadImg from '../assets/Navidad.png';
 import actDeportivaImg from '../assets/actDeportiva.png';
-import colegioImg from '../assets/Colegio.png';
+import colegioImg from '../assets/colegio.png';
 
 const Home: React.FC = () => {
   const { logout } = useAuth();
