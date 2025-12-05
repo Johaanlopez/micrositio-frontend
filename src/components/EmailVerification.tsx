@@ -83,7 +83,7 @@ const EmailVerification: React.FC<Props> = ({ email, onSuccess, initialMessage }
       console.log('📤 Enviando código:', joined);
       
       // ✅ FIX: Sin /api porque baseURL ya lo tiene
-      const res = await api.post('/auth/verify-email', { email, code: joined }, { 
+      // const res = await api.post('/auth/verify-email', { email, code: joined }, { 
         withCredentials: true,
         timeout: 10000
       });
@@ -128,7 +128,7 @@ const EmailVerification: React.FC<Props> = ({ email, onSuccess, initialMessage }
 
     try {
       // ✅ FIX: Sin /api
-      await api.post('/auth/resend-code', { email }, { 
+      // await api.post('/auth/resend-code', { email }, { 
         withCredentials: true,
         timeout: 10000
       });
