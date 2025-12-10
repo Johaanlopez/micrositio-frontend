@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
 import api from '../lib/api';
-import EmailVerification from './EmailVerification';
+// import EmailVerification from './EmailVerification';
 import GoogleAuthSetup from './GoogleAuthSetup';
 import styles from './RegisterForm.module.css';
 import logoImage from '../assets/logo.png';
@@ -30,7 +30,7 @@ const registerSchema = z.object({
 type RegisterFormData = z.infer<typeof registerSchema>;
 
 const RegisterForm: React.FC = () => {
-  const [stage, setStage] = useState<'register' | 'googleAuthSetup' | 'emailVerification'>('register');
+  const [stage, setStage] = useState<'register' | 'googleAuthSetup'>('register');
   const [userId, setUserId] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -66,12 +66,7 @@ const RegisterForm: React.FC = () => {
         setMessage('Registro exitoso. Configura tu autenticación de dos factores.');
         setStage('googleAuthSetup');
       }
-      // OLD FLOW: Email verification first (for backward compatibility)
-      else if (res.data?.requiresEmailVerification) {
-        setEmail(res.data.email); // Email viene del backend
-        setMessage('Registro exitoso. Revisa tu email.');
-        setStage('emailVerification');
-      }
+      // Eliminado: flujo de verificación de email
     } catch (err: any) {
       const errorData = err?.response?.data;
 
@@ -100,34 +95,27 @@ const RegisterForm: React.FC = () => {
     return (
       <GoogleAuthSetup
         userId={userId}
-        onSuccess={async () => {
-          // After 2FA is configured, send email verification code
-          try {
-            await api.post('/auth/send-email-code', { userId });
-            setMessage('2FA configurado. Verifica tu email.');
-            setStage('emailVerification');
-          } catch (err: any) {
-            console.error('Error sending email code:', err);
-            setMessage('2FA configurado. Verifica tu email.');
-            setStage('emailVerification');
-          }
+        onSuccess={() => {
+          setMessage('2FA configurado correctamente.');
+          navigate('/login');
         }}
       />
     );
   }
 
   // STEP 2: Show Email Verification (after QR is scanned)
-  if (stage === 'emailVerification') {
-    return (
-      <EmailVerification
-        email={email}
-        initialMessage={message}
-        onSuccess={() => {
-          navigate('/login');
-        }}
-      />
-    );
-  }
+  // Eliminado: etapa de verificación de email
+  // if (stage === 'emailVerification') {
+  //   return (
+  //     <EmailVerification
+  //       email={email}
+  //       initialMessage={message}
+  //       onSuccess={() => {
+  //         navigate('/login');
+  //       }}
+  //     />
+  //   );
+  // }
 
   return (
     <div className={styles.container}>

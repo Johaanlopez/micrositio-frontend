@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import api from '../lib/api';
-import EmailVerification from './EmailVerification';
+// import EmailVerification from './EmailVerification';
 import GoogleAuthSetup from './GoogleAuthSetup';
 import GoogleAuthLogin from './GoogleAuthLogin';
 import styles from './LoginForm.module.css';
@@ -48,11 +48,8 @@ const LoginForm: React.FC = () => {
         password: data.password,
       });
 
-      if (res.data?.requiresEmailVerification) {
-        setEmail(data.emailOrUsername);
-        setMessage(res.data.message || 'Código enviado a tu email');
-        setStage('emailVerification');
-      } else if (res.data?.requiresGoogleAuthSetup) {
+      // Eliminado: flujo de verificación de email
+      if (res.data?.requiresGoogleAuthSetup) {
         const token = res.data?.tempToken || res.data?.temp_token || res.data?.temptoken;
         if (token) {
           setTempToken(token);
@@ -75,18 +72,18 @@ const LoginForm: React.FC = () => {
     }
   };
 
-  if (stage === 'emailVerification') {
-    return (
-      <EmailVerification
-        email={email}
-        initialMessage={message}
-        onSuccess={(token) => {
-          setTempToken(token);
-          setStage('googleAuth');
-        }}
-      />
-    );
-  }
+  // Eliminado: etapa de verificación de email
+  //   return (
+  //     <EmailVerification
+  //       email={email}
+  //       initialMessage={message}
+  //       onSuccess={(token) => {
+  //         setTempToken(token);
+  //         setStage('googleAuth');
+  //       }}
+  //     />
+  //   );
+  // }
 
   if (stage === 'googleAuth' && tempToken) {
     // Si requiresSetup es true, mostrar GoogleAuthSetup (con QR - primera vez)
