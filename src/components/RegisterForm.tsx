@@ -31,7 +31,7 @@ type RegisterFormData = z.infer<typeof registerSchema>;
 
 const RegisterForm: React.FC = () => {
   const [stage, setStage] = useState<'register' | 'googleAuthSetup'>('register');
-  const [userId, setUserId] = useState('');
+  const [userId, setUserId] = useState<number | null>(null);
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -61,7 +61,7 @@ const RegisterForm: React.FC = () => {
 
       // NEW FLOW: First show Google Auth Setup (QR code)
       if (res.data?.requiresGoogleAuthSetup) {
-        setUserId(res.data.userId);
+        setUserId(Number(res.data.userId));
         setEmail(res.data.email); // Email viene del backend
         setMessage('Registro exitoso. Configura tu autenticación de dos factores.');
         setStage('googleAuthSetup');
@@ -94,7 +94,7 @@ const RegisterForm: React.FC = () => {
   if (stage === 'googleAuthSetup') {
     return (
       <GoogleAuthSetup
-        userId={userId}
+        userId={userId !== null ? userId : undefined}
         onSuccess={() => {
           setMessage('2FA configurado correctamente.');
           navigate('/login');
