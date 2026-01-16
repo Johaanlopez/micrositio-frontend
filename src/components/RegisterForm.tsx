@@ -61,7 +61,7 @@ const RegisterForm: React.FC = () => {
 
       // NEW FLOW: First show Google Auth Setup (QR code)
       if (res.data?.requiresGoogleAuthSetup) {
-        setUserId(Number(res.data.userId));
+        setUserId(String(res.data.userId));
         setEmail(res.data.email); // Email viene del backend
         setMessage('Registro exitoso. Configura tu autenticación de dos factores.');
         setStage('googleAuthSetup');

@@ -50,8 +50,8 @@ const GoogleAuthSetup: React.FC<Props> = ({ tempToken, userId, onSuccess }) => {
         const body: any = {}
         
         if (userId !== undefined && userId !== null) {
-          // NEW FLOW: Registration with userId (asegurar que es número)
-          body.userId = Number(userId)
+          // NEW FLOW: Registration with userId (debe ser string)
+          body.userId = userId;
         } else if (tempToken) {
           // OLD FLOW: Email verification with tempToken
           config.headers = {
